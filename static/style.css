@@ -1,0 +1,58 @@
+body{
+    background: white url(images/memphis-mini.png)
+}
+
+.navbar-brand {
+    font-family: 'Lobster', cursive;
+
+}
+
+.card{
+    background: white;
+}
+.card-main:hover{
+    -webkit-box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+}
+
+.card-text{
+    font-family: cursive;
+}
+
+.card-title{
+  font-family: Sans-serif;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.card-text{
+    font-family: cursive;
+}
+
+.card-body{
+    padding-left: 10px;
+    padding-bottom: 30px
+}
+
+.card-info{
+    padding-left: 30px;
+}
+
+.card-img-top{
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 0px;
+    width: 640px;
+    height: 426px;
+}
+
+.panel-header{
+  font-family: Sans-serif;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.panel-body{
+    font-family: cursive;
+}

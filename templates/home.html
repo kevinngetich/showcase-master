@@ -1,0 +1,7 @@
+{% if user.is_authenticated %}
+    <p class="display-4">Hello, {{ user.username }}</p>
+    <a class="lead" href="{% url 'logout' %}">Log Out</a>
+
+{% else %}
+    <a class="lead" href="{% url 'login' %}">Log in</a>
+{% endif %}

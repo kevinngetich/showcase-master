@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Kevin Ngetich | {% block title %}{% endblock %}</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static './css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static './css/boostrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static './css/boostrap.theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static './css/boostrap.theme.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static './style.css' %}">
+
+</head>
+<body>
+    <script src="{% static './js/boostrap.js' %}"></script>
+    <script src="{% static './js/boostrap.min.js' %}"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <div class="container-fluid">
+        <nav class="navbar navbar-default bg-dark navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"> Converse </a>
+            </div>
+            <div class="collapse navbar-collapse" id=#navigation>
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a class="nav-link" href="{% url 'article:feed' %}">Feed</a>
+                    </li>
+
+                    <li class="">
+                        <a class="nav-link" href="#">Messages</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                    <div class="form-group">
+                        <input class="form-control mr-sm-2" type="text" name="q" value="" placeholder="Search">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="">
+                        <a class="nav-link" href="#">
+                            Logout&nbsp;
+                            <span class="glyphicon glyphicon-off"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 70px;">
+            <div class="col-lg-12">
+                <h1>WEBSITE IS UNDER CONSTRUCTION. WILL BE AVAILABLE SOON.</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

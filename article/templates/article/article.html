@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+Article
+{% endblock %}
+
+{% block content %}
+            <div class="col-lg-6">
+                <div class="card card-default">
+
+                    <div class="card-body" style="padding-bottom: 15px; padding-left: 10px; padding-right: 10px;">
+
+                        <h1 class="card-title" style="text-align: center;"><strong>{{ article.article_title }}</strong></h1>
+                        <img class="card-img-top" src="{{ article.image.url }}" alt="{{ article.article_title }}" style="padding-right: 15px;">
+                        <hr>
+                      <p class="card-text" style="text-align: justify; letter-spacing: 2px; font-size: 100%;"> {{ article.article_text | linebreaks }} </p>
+                    </div>
+                </div>
+
+                <hr>
+                <h3 style="text-align: center;"><strong>Comments</strong></h3>
+                <hr>
+                {% if user.is_authenticated %}
+                <form method="post">
+                    {% csrf_token %}
+                  <div class="form-group">
+                      <label for="comment">Comment as {{ user.username }}: </label>
+                      <textarea type="text" class="form-control" name="comment" placeholder="Commment"></textarea>
+                      <input type="hidden" class="form-control" name="article" value="{{ article.id }}">
+                      <input type="hidden" class="form-control" name="user" value="{{ user.username }}">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <hr>
+                {% else %}
+                <h4 style="text-align: center;">Sign Up to Comment</h4>
+                <br>
+                {% endif %}
+                {% if comments %}
+                    {% for comment in comments %}
+                        {% if comment.article.id is article.id %}
+                            <div class="card card-main">
+                                <div class="card-body" style="padding-bottom: 15px;">
+                                    <h3 class="card-title" style="text-align: justify;"><strong>{{ comment.user }}</strong></h3>
+                                  <p class="card-text">{{ comment.comment }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <h1 style="text-align: center;">THERE ARE NO COMMENTS TO VIEW</h1>
+                {% endif %}
+                <hr>
+            </div>
+{% endblock %}
